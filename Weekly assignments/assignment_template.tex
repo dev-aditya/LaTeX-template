@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bm, eqnarray}
+\usepackage{lipsum}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\bracket}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{ | #1 |}
+
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\title{\textbf{COURSE: Assignment X}}%replace X with the appropriate number
+\author{Name} 
+\date{}
+\maketitle
+
+\begin{theorem}{1}
+	\lipsum[1][1-2]
+\end{theorem}
+
+\begin{problem}{1}
+	\lipsum[2][1-4]
+\end{problem}
+\begin{lemma}{1}
+	\lipsum[3][1-4]
+\end{lemma}
+\begin{question}{1}
+	\lipsum[4][1-4]
+\end{question}
+
+\begin{proof}[Proof Heading]
+	\lipsum[1]
+\end{proof}
+\begin{corollary}{1}
+	\lipsum[5][1-4]
+\end{corollary}
+
+
+
+
+\end{document}
