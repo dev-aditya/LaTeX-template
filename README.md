@@ -1,2 +1,2 @@
 # latex_template
-My latex template for notes and weekly assignments
+My latex template for notes and weekly maths assignments
