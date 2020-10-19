@@ -1,5 +1,6 @@
 # latex_template
-My latex template for notes and weekly maths assignments
+My latex template for notes and weekly maths assignments.
+Some code snippets taken from open-source projects.
 
 File structure.
 ```
