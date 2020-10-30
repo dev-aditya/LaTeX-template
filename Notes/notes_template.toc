@@ -1,4 +1,0 @@
-\babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Title 1}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Title 2}{2}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Title 3}{2}{subsection.1.1.1}%

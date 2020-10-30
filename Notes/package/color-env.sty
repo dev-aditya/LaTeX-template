@@ -1,0 +1,158 @@
+\ProvidesPackage{framed-box}[2020/10/31 v1.0 Framed Box]
+
+%%%%%%%%%%%%%%%%
+% Requirements %
+%%%%%%%%%%%%%%%%
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage[framemethod=TikZ]{mdframed}
+\RequirePackage{framed}  %% for problem 
+
+%%%%%%%%%%%%%%%%%%
+% Environments   %
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%% Problem %%%%%%%%%%%%%
+\colorlet{shadecolor}{orange!12}
+
+\newtheorem{prob}{Problem}
+
+\newenvironment{problem}
+{\begin{shaded}\begin{prob}}
+		{\end{prob}\end{shaded}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{theo}[section] \setcounter{theo}{0} %% counter
+\renewcommand{\thetheo}{\arabic{chapter}.\arabic{section}.\arabic{theo}}
+\newenvironment{theorem}[2][]{%
+	\refstepcounter{theo}%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=blue!20]
+				{\strut Theorem~\thetheo};}}
+	}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=blue!20]
+				{\strut Theorem~\thetheo:~#1};}}%
+	}%
+	\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+		linewidth=2pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+	}
+	\begin{mdframed}[]\relax%
+		\label{#2}}{\end{mdframed}}
+%%%%%%%%%%%%%%% For lemma %%%%%%%%%%%%%%%
+\newcounter{lem}[section]\setcounter{lem}{0}
+\renewcommand{\thelem}{\arabic{chapter}.\arabic{section}.\arabic{lem}}
+\newenvironment{lemma}[2][]{%
+	\refstepcounter{lem}%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=orange!20]
+				{\strut Lemma~\thelem};}}
+	}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=orange!20]
+				{\strut Lemma~\thelem:~#1};}}%
+	}%
+	\mdfsetup{innertopmargin=10pt,linecolor=green!20,%
+		linewidth=2pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+	}
+	\begin{mdframed}[]\relax%
+		\label{#2}}{\end{mdframed}}
+
+%%%%%%%%%%%%% definition %%%%%%%%%%%%%%%
+\newcounter{def}[subsection]\setcounter{def}{0}
+\renewcommand{\thedef}{\arabic{chapter}.\arabic{section}.\arabic{def}}
+\newenvironment{definition}[2][]{%
+	\refstepcounter{def}%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=red!25]
+				{\strut Definition~\thedef};}}
+	}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=red!25]
+				{\strut Definition~\thedef:~#1};}}%
+	}%
+	\mdfsetup{innertopmargin=10pt,linecolor=red!25,%
+		linewidth=2pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+	}
+	\begin{mdframed}[]\relax%
+		\label{#2}}{\end{mdframed}}
+%%%%%%%%%%%%%% corollary %%%%%%%%%%%%%%%%%%
+\newcounter{cor}[section]\setcounter{cor}{0}
+\renewcommand{\thecor}{\arabic{chapter}.\arabic{section}.\arabic{cor}}
+\newenvironment{corollary}[2][]{%
+	\refstepcounter{cor}%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=yellow!20]
+				{\strut Corollary~\thecor};}}
+	}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=yellow!20]
+				{\strut Corollary~\thecor:~#1};}}%
+	}%
+	\mdfsetup{innertopmargin=10pt,linecolor=yellow!20,%
+		linewidth=2pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+	}
+	\begin{mdframed}[]\relax%
+		\label{#2}}{\end{mdframed}}
+
+%%%%%%%%%%%%%proposition%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{prop}[section]\setcounter{prop}{0}
+\renewcommand{\theprop}{\arabic{chapter}.\arabic{section}.\arabic{prop}}
+\newenvironment{proposition}[2][]{%
+	\refstepcounter{prop}%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=green!25]
+				{\strut Proposition~\theprop};}}
+	}%
+	{\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=green!25]
+				{\strut Proposition~\theprop:~#1};}}%
+	}%
+	\mdfsetup{innertopmargin=10pt,linecolor=green!25,%
+		linewidth=2pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+	}
+	\begin{mdframed}[]\relax%
+        \label{#2}}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+%\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
+%\let\oldendproof\endproof
+%\renewenvironment{proof}[1][\proofname]{%
+%	\oldproof[\bf \scshape \large #1]%
+%}{\oldendproof}
+%%%%%%%%%%%%%%%%
+
+
+
