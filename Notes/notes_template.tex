@@ -1,33 +1,10 @@
 
-\documentclass[a4paper,oneside]{book}
+\documentclass{package/notes}
 \usepackage[english]{babel}
 \usepackage{amssymb,amsmath,amsfonts}  %%% for maths
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[total={5in, 9in}]{geometry}  %%% for changing margins
-\usepackage{hyperref}  %%% for url 
-\hypersetup{
-	colorlinks=true,
-	linkcolor=blue,
-	filecolor=magenta,      
-	urlcolor=cyan,
-}
 \usepackage{package/color-env}
 \usepackage{lipsum}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeatletter
-\def\@seccntformat#1{\@ifundefined{#1@cntformat}%
-	{\csname the#1\endcsname\quad}%      default
-	{\csname #1@cntformat\endcsname}}%   individual control
-\newcommand{\section@cntformat}{\S\thesection\quad}
-\newcommand{\subsection@cntformat}{\S\thesubsection\quad}
-\newcommand{\subsubsection@cntformat}{\S\thesubsubsection\quad}
-\makeatletter
-%%%%%%%%%%%%%%%%
-\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
-\let\oldendproof\endproof
-\renewenvironment{proof}[1][\proofname]{%
-	\oldproof[\bf \scshape \large #1]%
-}{\oldendproof}
 \renewcommand\qedsymbol{$\blacksquare$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

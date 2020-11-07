@@ -5,18 +5,16 @@
 %%%%%%%%%%%%%%%%
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
-\RequirePackage[framemethod=TikZ]{mdframed}
+\RequirePackage[framemethod=TikZ]{mdframed}  %% for colored framed boxes
 \RequirePackage{framed}  %% for problem 
-\RequirePackage{amsthm}
+\RequirePackage{amsthm}  %% for theorem environment 
 %%%%%%%%%%%%%%%%%%
 % Environments   %
 %%%%%%%%%%%%%%%%%%
 
 %%%%%%%% Problem %%%%%%%%%%%%%
 \colorlet{shadecolor}{orange!12}
-
 \newtheorem{prob}{Problem}
-
 \newenvironment{problem}
 {\begin{shaded}\begin{prob}}
 		{\end{prob}\end{shaded}}
@@ -145,6 +143,14 @@
 	\begin{mdframed}[]\relax%
         \label{#2}}{\end{mdframed}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
+\let\oldendproof\endproof
+\renewenvironment{proof}[1][\proofname]{%
+	\oldproof[\bf \scshape \large #1]%
+}{\oldendproof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%
 %\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
