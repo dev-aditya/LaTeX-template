@@ -7,7 +7,8 @@ File structure.
 ├── LICENSE
 ├── Notes  
 |   ├── package
-|   |   └── color-env.sty
+|   |    ├── color-env.sty
+|   |    └── notes.cls
 |   ├── notes_template.pdf
 │   ├── notes_template.tex
 ├── README.md
