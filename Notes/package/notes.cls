@@ -3,6 +3,7 @@
 
 \LoadClass[a4paper,oneside]{book}
 \RequirePackage{hyperref}
+\RequirePackage[english]{babel}
 \RequirePackage[total={5in, 9in}]{geometry}
 \hypersetup{
 	colorlinks=true,

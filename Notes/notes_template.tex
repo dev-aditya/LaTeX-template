@@ -1,74 +1,113 @@
-
 \documentclass{package/notes}
-\usepackage[english]{babel}
-\usepackage{amssymb,amsmath,amsfonts}  %%% for maths
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%% Required Packages %%%%%%%%%%%%%
 \usepackage{package/color-env}
-\usepackage{lipsum}
-\renewcommand\qedsymbol{$\blacksquare$}
+\usepackage{background}
+\usepackage[object=vectorian]{pgfornament}
+%%%%%% Optional Packages %%%%%%%
+\usepackage{lipsum}  %% for dummy text 
+\usepackage{calligra} %%% (optional) to make the Title text beautiful 
+\usepackage{amssymb,amsmath,amsfonts}  %%% for maths
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-	\begin{titlepage} % Suppresses headers and footers on the title page
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Taken from  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%  https://www.reddit.com/r/LaTeX/comments/j9d739/hello_world_in_latex_is_a_lot_cooler/   %%%%%
+%%%%%%%%%%%%%%%% If this doesn't look nice then you may remove it %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\backgroundsetup{
+scale=1,
+opacity=1,
+angle=0,
+color=black,
+contents={
+\begin{tikzpicture}[color=black, every node/.style={inner sep= 15pt}]
+\node (NW) [anchor=north west] at (current page.north west){\pgfornament[width=2.5cm] {131}};
+\node (NE) [anchor=north east] at (current page.north east){\pgfornament[width=2.5cm, symmetry=v]{131}};
+\node (SW) [anchor=south west] at (current page.south west){\pgfornament[width=2.5cm, symmetry=h]{131}};
+\node (SE) [anchor=south east] at (current page.south east){\pgfornament[width=2.5cm, symmetry=c]{131}};
+\foreach \i in {-4,0,4}
+\node[anchor=north,xshift=\i cm] at (current page.north){\pgfornament[scale=0.25,symmetry=v]{71}};
+\foreach \i in {-4,0,4}
+\node[xshift=\i cm, yshift=32.25 pt] at (current page.south){\pgfornament[scale=0.25,symmetry=v]{71}};
+\foreach \i in {-8,-4,0,4,8}
+\node[yshift=\i cm, xshift=32.25pt, rotate=90] at (current page.west){\pgfornament[scale=0.25,symmetry=v]{71}};
+\foreach \i in {-8,-4,0,4,8}
+\node[yshift=\i cm, xshift=-32.25pt, rotate=90] at (current page.east){\pgfornament[scale=0.25,symmetry=v]{71}};
+\foreach \i in {-11,-9,...,7,9}
+\node[anchor=west, yshift=\i cm, xshift=52.25pt, rotate=90] at (current page.west){\pgfornament[scale=0.1]{80}};
+\foreach \i in {-11,-9,...,7,9}
+\node[anchor=east, yshift=\i cm, xshift=-52.25pt, rotate=-90] at (current page.east){\pgfornament[scale=0.1]{80}};
+\end{tikzpicture}
+}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering % Centre everything on the title page
 		
-		\centering % Centre everything on the title page
-		
-		\scshape % Use small caps for all text on the title page
-		
-		\vspace*{\baselineskip} % White space at the top of the page
-		
-		%------------------------------------------------
-		%	Title
-		%------------------------------------------------
-		
-		\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
-		\rule{\textwidth}{0.4pt} % Thin horizontal rule
-		
-		\vspace{0.75\baselineskip} % Whitespace above the title
-		
-		{\huge TITLE\\} % Title
-		
-		\vspace{0.75\baselineskip} % Whitespace below the title
-		
-		\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
-		\rule{\textwidth}{1.6pt} % Thick horizontal rule
-		
-		\vspace{2\baselineskip} % Whitespace after the title block
-		
-		%------------------------------------------------
-		%	Subtitle
-		%------------------------------------------------
-		
-		\LARGE{COURSE} 
-		
-		\vspace*{3\baselineskip} % Whitespace under the subtitle
-		
-		
-		
-		\vspace{0.5\baselineskip} 
-		
-		{\scshape   \LARGE Professor\\ } % Editor list
-		
-		\vspace{0.5\baselineskip} 
-		
-		\textit{\Large affiliation} % affiliation
-		
-		\vfill 
-		
-		%------------------------------------------------
-		% Author
-		%------------------------------------------------
-		
-		
-		\vspace{0.3\baselineskip} 
-		
-		
-		{\large Edited by\\  Your name} 
-		
-	\end{titlepage}
-	\tableofcontents
+\scshape % Use small caps for all text on the title page
+
+\vspace*{\baselineskip} % White space at the top of the page
+
+%------------------------------------------------
+%	Title
+%------------------------------------------------
+
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
+\rule{\textwidth}{0.4pt} % Thin horizontal rule
+
+\vspace{0.75\baselineskip} % Whitespace above the title
+
+{\huge \calligra{ The Title }\\} % Title
+
+\vspace{0.75\baselineskip} % Whitespace below the title
+
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+\rule{\textwidth}{1.6pt} % Thick horizontal rule
+
+\vspace{2\baselineskip} % Whitespace after the title block
+
+%------------------------------------------------
+%	Subtitle
+%------------------------------------------------
+
+\LARGE{Course Name} 
+
+\vspace*{3\baselineskip} % Whitespace under the subtitle
+
+
+
+\vspace{0.5\baselineskip} 
+
+{\scshape   \LARGE Professor\\ } % Editor list
+
+\vspace{0.2\baselineskip} 
+
+\textit{\Large University} 
+
+\vfill 
+
+%------------------------------------------------
+% Author
+%------------------------------------------------
+
+
+\vspace{0.3\baselineskip} 
+
+
+{\large Edited by\\  Your name} 
+\end{titlepage}
+\backgroundsetup{contents={}} %% to remove background and watermark from other pages
+\tableofcontents
 %\newpage
+
+
+
+
 \chapter{Title 1}
 
 \section{Title 2}
@@ -76,6 +115,8 @@
 
 \begin{definition}[DEF NAME]{def:label} %%  [can be kept empty]
 	\lipsum[1][1-3]
+	Here is the nice looking Schrodinger's Equation
+	\[i\hbar\frac{\partial}{\partial t} \varPsi(\mathbf{r},t) = \left [ \frac{-\hbar^2}{2m}\nabla^2 + V(\mathbf{r},t)\right ] \varPsi(\mathbf{r},t)\]
 \end{definition}
 
 \begin{theorem}[THM NAME]{thm:label}%%  [can be kept empty]
