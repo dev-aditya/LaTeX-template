@@ -20,8 +20,6 @@
 %OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 %SOFTWARE.
 
-%%%% From https://github.com/jstrieb/homework-template %%%%%%%%%%%%%%%
-
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{assignment}[Assignment Class]
