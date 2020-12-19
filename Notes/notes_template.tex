@@ -1,61 +1,112 @@
 \documentclass{package/notes}
 
+%%%%%%%%%% Default Package %%%%%%%%%%%%%
+\usepackage{package/color-env}
+%%%%%%%%%% %%%%%%%%%%%%%%% %%%%%%%%%%%%%
 
 %%%%%%%%%% Required Packages %%%%%%%%%%%%%
-\usepackage{package/color-env}
 \usepackage{background}
-\usepackage[object=vectorian]{pgfornament}
-%%%%%% Optional Packages %%%%%%%
-\usepackage{lipsum}  %% for dummy text 
+\usepackage[object=vectorian]{pgfornament} %% used in title.tex
 \usepackage{calligra} %%% (optional) to make the Title text beautiful 
+
+%%%%%% Optional Packages %%%%%%%
+\usepackage{lettrine} %% for nice looking 
+\usepackage{GoudyIn} %% first Letter of the paragraph
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{lipsum}  %% for dummy text 
 \usepackage{amssymb,amsmath,amsfonts}  %%% for maths
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\LettrineFontHook}{\color{black}\GoudyInfamily{}}
+\LettrineTextFont{\itshape}
+\setcounter{DefaultLines}{3}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Bibliography %%%%%%%%%
+% Required packages are included in notes class
+% Can be tweaked in the notes.cls file itself
+
+\addbibresource{resource/references.bib}
+
 \begin{document}
 
-\begin{titlepage} % Suppresses headers and footers on the title page
-	\input{title.tex}
-\end{titlepage}
+\include{title.tex}
+
 \newpage
 
 \backgroundsetup{contents={}} %% to remove background and watermark from other pages
 \tableofcontents
+
 %\newpage
 \chapter{A Nice Title}
+
+\lettrine{L}{o} %% for the calligraphic First Letter
+rem ipsum dolor sit amit consectetuer adipiscingelit \footnote[1]{Here is an example footnote. \LaTeX{} can be customized in many different ways}.  
+\lipsum[1][2-100] \cite{wiki:latex}
+
+
 
 \section{Here goes the section!}
 \subsection{And the subsection}
 
 \begin{definition}[DEF NAME]{def:label} %%  [can be kept empty]
-	\lipsum[1][1-3]
-	Here is the nice looking Schrodinger's Equation
+	\lipsum[1][1-3] %% for dummy text
+	Here is the nice looking Schrodinger's Equation \cite{dirac}
 	\[i\hbar\frac{\partial}{\partial t} \varPsi(\mathbf{r},t) = \left [ \frac{-\hbar^2}{2m}\nabla^2 + V(\mathbf{r},t)\right ] \varPsi(\mathbf{r},t)\]
 \end{definition}
 
 \begin{theorem}[THM NAME]{thm:label}%%  [can be kept empty]
-	\lipsum[2][1-3]
+	\lipsum[2][1-5] %% for dummy text
 \end{theorem}
 
-\begin{lemma}[LEM NAME]{lem:label}%%  [can be kept empty]
-	\lipsum[3][1-3]
-\end{lemma}
-
 \begin{proposition}[PROP NAME]{prop:label}%%  [can be kept empty]
-	\lipsum[4][1-3]
+	\lipsum[4][1-4] %% for dummy text
 \end{proposition}
 
+\begin{lemma}[LEM NAME]{lem:label}%%  [can be kept empty]
+	\lipsum[3][1-3] %% for dummy text
+\end{lemma}
+
 \begin{corollary}[COR NAME]{cor:label}%%  [can be kept empty]
-	\lipsum[5][1-3]
+	\lipsum[5][1-3] %% for dummy text
 \end{corollary}
 
 \begin{problem}%%  [can be kept empty]
-	\lipsum[1][1-3]
+	\lipsum[1][1-3] %% for dummy text
 \end{problem}
 \begin{proof}[Proof Head]
-	\lipsum[1][1-10]
+	\lipsum[1][1-10] %% for dummy text
 \end{proof}
+\nocite{knuthwebsite}
+
+\section{Images and Mathematics}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[height = 0.5\textwidth]{resource/ctan_lion.png}
+	\caption{We can add images too!! Isn't that good.}
+	\label{img:anything}
+\end{figure}
 
 
+The Maxwell's equations !!
+\[
+\begin{gathered}
+	\nabla \cdot \mathbf {E} ={\frac {\rho }{\varepsilon _{0}}} \\
+	 \nabla \cdot \mathbf {B} ={0} \\
+	\nabla \times \mathbf {E} =-{\frac {\partial \mathbf {B} }{\partial t}}\\
+	 \nabla \times \mathbf {B} =\mu _{0}\left(\mathbf {J} +\varepsilon _{0}{\frac {\partial \mathbf {E} }{\partial t}}\right)
+\end{gathered}
+\]
+
+
+
+
+\pagebreak
+
+\medskip
+
+\printbibliography[heading=bibintoc,title={\centering Bibliography}]
 
 \end{document}
-.

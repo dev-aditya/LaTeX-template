@@ -5,4 +5,8 @@
 *.out
 *.synctex.gz
 *.toc
+*.bbl
+*.bcf
+*.blg
+*.xml
 old.zip

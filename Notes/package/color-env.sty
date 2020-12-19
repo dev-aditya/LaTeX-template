@@ -1,15 +1,17 @@
-\ProvidesPackage{color-env}[2020/10/31 v1.0 color-env]
+\ProvidesPackage{color-env}[2020/10/31 color-env]
 
 %%%%%%%%%%%%%%%%
 % Requirements %
 %%%%%%%%%%%%%%%%
+
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage[framemethod=TikZ]{mdframed}  %% for colored framed boxes
 \RequirePackage{framed}  %% for problem 
 \RequirePackage{amsthm}  %% for theorem environment 
+
 %%%%%%%%%%%%%%%%%%
-% Environments   %
+%  Environments  %
 %%%%%%%%%%%%%%%%%%
 
 %%%%%%%% Problem %%%%%%%%%%%%%
@@ -44,7 +46,7 @@
 	}
 	\begin{mdframed}[]\relax%
 		\label{#2}}{\end{mdframed}}
-%%%%%%%%%%%%%%% For lemma %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% LEMMA %%%%%%%%%%%%%%%
 \newcounter{lem}[section]\setcounter{lem}{0}
 \renewcommand{\thelem}{\arabic{chapter}.\arabic{section}.\arabic{lem}}
 \newenvironment{lemma}[2][]{%
@@ -62,14 +64,14 @@
 				\node[anchor=east,rectangle,fill=orange!20]
 				{\strut Lemma~\thelem:~#1};}}%
 	}%
-	\mdfsetup{innertopmargin=10pt,linecolor=green!20,%
+	\mdfsetup{innertopmargin=10pt,linecolor=orange!20,%
 		linewidth=2pt,topline=true,%
 		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
 	}
 	\begin{mdframed}[]\relax%
 		\label{#2}}{\end{mdframed}}
 
-%%%%%%%%%%%%% definition %%%%%%%%%%%%%%%
+%%%%%%%%%%%%% DEFINITION %%%%%%%%%%%%%%%
 \newcounter{def}[subsection]\setcounter{def}{0}
 \renewcommand{\thedef}{\arabic{chapter}.\arabic{section}.\arabic{def}}
 \newenvironment{definition}[2][]{%
@@ -93,7 +95,7 @@
 	}
 	\begin{mdframed}[]\relax%
 		\label{#2}}{\end{mdframed}}
-%%%%%%%%%%%%%% corollary %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% COROLLARY %%%%%%%%%%%%%%%%%%
 \newcounter{cor}[section]\setcounter{cor}{0}
 \renewcommand{\thecor}{\arabic{chapter}.\arabic{section}.\arabic{cor}}
 \newenvironment{corollary}[2][]{%
@@ -118,7 +120,7 @@
 	\begin{mdframed}[]\relax%
 		\label{#2}}{\end{mdframed}}
 
-%%%%%%%%%%%%%proposition%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% PROPOSITIONS %%%%%%%%%%%%%%%%%%%
 \newcounter{prop}[section]\setcounter{prop}{0}
 \renewcommand{\theprop}{\arabic{chapter}.\arabic{section}.\arabic{prop}}
 \newenvironment{proposition}[2][]{%
@@ -143,6 +145,8 @@
 	\begin{mdframed}[]\relax%
         \label{#2}}{\end{mdframed}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
 \let\oldendproof\endproof

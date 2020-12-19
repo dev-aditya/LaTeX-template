@@ -1,8 +1,17 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{notes}[2020/11/01 notes class]
-
 \LoadClass[a4paper,oneside]{book}
+
+\RequirePackage[
+backend=biber,
+style=numeric,
+citestyle=numeric-comp ,
+sorting=none 
+]{biblatex}
+\RequirePackage{csquotes}
+\RequirePackage{graphicx}
 \RequirePackage{hyperref}
+\RequirePackage{lmodern}
 \RequirePackage[english]{babel}
 \RequirePackage{geometry}
 \geometry{margin=1.5in}
@@ -12,6 +21,7 @@
 	filecolor=magenta,      
 	urlcolor=cyan,
 }
+
 %\RequirePackage[]{fncychap}
 \RequirePackage{xpatch}
 \RequirePackage{blindtext}
