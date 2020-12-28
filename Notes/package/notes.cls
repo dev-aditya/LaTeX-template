@@ -9,7 +9,9 @@ citestyle=numeric-comp ,
 sorting=none 
 ]{biblatex}
 \RequirePackage{csquotes}
-\RequirePackage{graphicx}
+\RequirePackage{graphicx} %% for inserting images
+\RequirePackage{graphics, float} %% for forcing the image to be at the same place as defined
+\RequirePackage{wrapfig} %% for wrapping it around text
 \RequirePackage{hyperref}
 \RequirePackage{lmodern}
 \RequirePackage[english]{babel}
@@ -22,10 +24,12 @@ sorting=none
 	urlcolor=cyan,
 }
 
-%\RequirePackage[]{fncychap}
+\RequirePackage{fancyhdr}  %% fancy footnotes and headers
+\RequirePackage{fourier-orns}
+\renewcommand{\footnoterule}{\vspace{-0.5em}\noindent\textcolor{darkgray}{\floweroneright ~ \raisebox{2.9pt}{\line(1,0){100}} \leafNE} \vspace{.5em} }
+
 \RequirePackage{xpatch}
 \RequirePackage{blindtext}
-\RequirePackage{graphics}
 \RequirePackage{xcolor}
 
 \makeatletter
@@ -34,7 +38,7 @@ sorting=none
   %\vspace*{60\p@}%
   {\parindent \z@ \centering
           {\color{black}
-            \scshape \Large \textbf{\@chapapp{} \thechapter} 
+            \scshape \Large \textsc{\textbf{\@chapapp{} \thechapter}} 
 		  }
 		  \par\nobreak
 		  \thickhrulefill
@@ -61,6 +65,8 @@ sorting=none
 }{\typeout{Patched @makechapterhead}}{\typeout{Patching of @makechapterhead failed}}
 
 \makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}  %change default length b/w paragrapg
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 \def\@seccntformat#1{\@ifundefined{#1@cntformat}%
