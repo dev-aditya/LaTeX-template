@@ -1,0 +1,22 @@
+## List of Required Packages
+
+- xkeyval
+- hyperref
+- geometry
+- microtype
+- mulitcol
+- url
+- ulem
+- upquote
+- fontenc 
+- enumerate
+- enumitem
+- amsmath, amsthm, amssymb
+- mathpazo
+- fancyhdr
+- titlesec
+- footmisc
+- graphicx
+- pdfpages
+- langtable
+- booktabs
