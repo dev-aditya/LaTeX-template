@@ -1,0 +1,53 @@
+\ProvidesPackage{color-tufte}[2021/03/11 color-tufte]
+
+%%%%%%%%%%%%%%%%
+% Requirements %
+%%%%%%%%%%%%%%%%
+
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{framed} 
+\RequirePackage{amsthm}  %% for theorem environment 
+
+%%%%%%%%%%%%%%%%%%
+%  Environments  %
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%% Problem %%%%%%%%%%%%%
+\newtheorem{prob}{Problem}
+\newenvironment{problem}
+{\colorlet{shadecolor}{orange!10}\begin{shaded}\begin{prob}}
+		{\end{prob}\end{shaded}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theo}{Theroem}
+\newenvironment{theorem}
+{ \colorlet{shadecolor}{blue!10} \begin{shaded}\begin{theo}}
+		{\end{theo}\end{shaded}}
+%%%%%%%%%%%%%%% LEMMA %%%%%%%%%%%%%%%
+\newtheorem{lem}{Lemma}
+\newenvironment{lemma}
+{\colorlet{shadecolor}{orange!10} \begin{shaded}\begin{lem}}
+{\end{lem}\end{shaded}}
+%%%%%%%%%%%%% DEFINITION %%%%%%%%%%%%%%%
+\newtheorem{defi}{Definition}
+\newenvironment{definition}
+{\colorlet{shadecolor}{red!10} \begin{shaded}\begin{defi}}
+{\end{defi}\end{shaded}}
+%%%%%%%%%%%%%% COROLLARY %%%%%%%%%%%%%%%%%%
+\newtheorem{cor}{Corollary}
+\newenvironment{corollary}
+{ \colorlet{shadecolor}{yellow!10} \begin{shaded}\begin{cor}}
+		{\end{cor}\end{shaded}}
+%%%%%%%%%%%%% PROPOSITIONS %%%%%%%%%%%%%%%%%%%
+\newtheorem{prop}{Proposition}
+\newenvironment{proposition}
+{ \colorlet{shadecolor}{green!10} \begin{shaded}\begin{prop}}
+		{\end{prop}\end{shaded}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+

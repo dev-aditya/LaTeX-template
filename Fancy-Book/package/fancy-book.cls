@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{notes}[2020/11/01 notes class]
+\ProvidesClass{fancy-book}[2021/03/11 Fancy Book]
 \LoadClass[a4paper,oneside]{book}
 
 \RequirePackage[

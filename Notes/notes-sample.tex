@@ -1,0 +1,116 @@
+% !TEX program = pdflatex
+\documentclass{tufte-handout}
+
+\title{\centering Course:  Course Name}%\thanks{Inspired by Edward~R. Tufte!}}
+
+\author{I'm the author}
+
+
+\date{\today} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{g1}{HTML}{077358}
+\definecolor{g2}{HTML}{00b096}
+
+\usepackage{xcolor} % for colour
+
+% add numbers to chapters, sections, subsections
+\setcounter{secnumdepth}{2}
+
+% chapter format
+%\titleformat{\chapter}%
+%{\huge\rmfamily\itshape\color{red}}% format applied to label+text
+%{\llap{\colorbox{red}{\parbox{1.5cm}{\hfill\itshape\huge\color{white}\thechapter}}}}% label
+%{2pt}% horizontal separation between label and title body
+%{}% before the title body
+%[]% after the title body
+
+% section format
+\titleformat{\section}%
+{\normalfont\Large\itshape\color{g1}}% format applied to label+text
+{\llap{\colorbox{g1}{\parbox{1.5cm}{\hfill\color{white}\thesection}}}}% label
+{1em}% horizontal separation between label and title body
+{}% before the title body
+[]% after the title body
+
+% subsection format
+\titleformat{\subsection}%
+{\normalfont\large\itshape\color{g2}}% format applied to label+text
+{\llap{\colorbox{g2}{\parbox{1.5cm}{\hfill\color{white}\thesubsection}}}}% label
+{1em}% horizontal separation between label and title body
+{}% before the title body
+[]% after the title body
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color-tufte}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+Inspired by Tufte-\LaTeX class.
+
+Underconstruction. 
+\end{abstract}
+
+%\printclassoptions
+
+
+\section{Page Layout}\label{sec:page-layout}
+
+\subsection{Headings}\label{sec:headings}
+
+\begin{definition}%%  [can be kept empty]
+	\lipsum[1][1-3] %% for dummy text
+\end{definition}
+\marginnote{\begin{proof}[Proof (Theorem 1.1)] 
+		
+		\lipsum[1][1-3]\end{proof}}
+\begin{theorem}%%  [can be kept empty]
+	\lipsum[1][1-3] %% for dummy text
+\end{theorem}
+
+\begin{lemma}%%  [can be kept empty]
+	\lipsum[1][1-3] %% for dummy text
+	
+\end{lemma}
+
+\marginnote{\begin{proof}\lipsum[1][1-3]\end{proof}}
+
+\begin{corollary}%%  [can be kept empty]
+	\lipsum[1][1-3] %% for dummy text
+	
+\end{corollary}
+
+\begin{problem}
+	\lipsum[1][1-2]
+\end{problem}
+
+
+\end{document}
