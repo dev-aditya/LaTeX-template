@@ -1,4 +1,4 @@
-\ProvidesPackage{color-tufte}[2021/03/11 color-tufte]
+\ProvidesPackage{color-tufte}[2021/03/11 Color Tufte]
 
 %%%%%%%%%%%%%%%%
 % Requirements %
@@ -7,46 +7,100 @@
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{framed} 
-\RequirePackage{amsthm}  %% for theorem environment 
-
+\RequirePackage{amsthm} 
+\RequirePackage[many]{tcolorbox}
 %%%%%%%%%%%%%%%%%%
 %  Environments  %
 %%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theroem}[section]
+\tcolorboxenvironment{theorem}{
+	boxrule=0pt,
+	boxsep=2pt,
+	colback={White!90!Dandelion},
+	enhanced jigsaw, 
+	borderline west={2pt}{0pt}{Dandelion},
+	sharp corners,
+	before skip=10pt,
+	after skip=10pt,
+	breakable,
+	}
+%%%%%%%%%%%%%%% LEMMA %%%%%%%%%%%%%%%
+\newtheorem{lemma}{Lemma}[section]
+
+\tcolorboxenvironment{lemma}{
+  boxrule=0pt,
+  boxsep=2pt,
+  colback={White!90!Red},
+  enhanced jigsaw, 
+  borderline west={2pt}{0pt}{Red},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  breakable,
+}
+%%%%%%%%%%%%% DEFINITION %%%%%%%%%%%%%%%
+\newtheorem{definition}{Definition}[section]
+
+\tcolorboxenvironment{definition}{
+  boxrule=0pt,
+  boxsep=2pt,
+  colback={White!90!Cerulean},
+  enhanced jigsaw, 
+  borderline west={2pt}{0pt}{Cerulean},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  breakable,
+}
+%%%%%%%%%%%%%% COROLLARY %%%%%%%%%%%%%%%%%%
+\newtheorem{corollary}{Corollary}[section]
+
+\tcolorboxenvironment{corollary}{
+	boxrule=0pt,
+	boxsep=2pt,
+	colback={White!90!Yellow},
+	enhanced jigsaw, 
+	borderline west={2pt}{0pt}{Yellow},
+	sharp corners,
+	before skip=10pt,
+	after skip=10pt,
+	breakable,
+	}
+%%%%%%%%%%%%% PROPOSITIONS %%%%%%%%%%%%%%%%%%%
+\newtheorem{proposition}{Proposition}[section]
+
+\tcolorboxenvironment{proposition}{
+	boxrule=0pt,
+	boxsep=2pt,
+	colback={White!90!Orange},
+	enhanced jigsaw, 
+	borderline west={2pt}{0pt}{Orange},
+	sharp corners,
+	before skip=10pt,
+	after skip=10pt,
+	breakable,
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcolorboxenvironment{proof}{
+  boxrule=0pt,
+  boxsep=2pt,
+  blanker,
+  borderline west={2pt}{0pt}{NavyBlue!80!white},
+  before skip=10pt,
+  after skip=10pt,
+  left=12pt,
+  right=12pt,
+  breakable,
+}
+
 %%%%%%%% Problem %%%%%%%%%%%%%
 \newtheorem{prob}{Problem}
 \newenvironment{problem}
-{\colorlet{shadecolor}{orange!10}\begin{shaded}\begin{prob}}
+{\colorlet{shadecolor}{green!10}\begin{shaded}\begin{prob}}
 		{\end{prob}\end{shaded}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheorem{theo}{Theroem}
-\newenvironment{theorem}
-{ \colorlet{shadecolor}{blue!10} \begin{shaded}\begin{theo}}
-		{\end{theo}\end{shaded}}
-%%%%%%%%%%%%%%% LEMMA %%%%%%%%%%%%%%%
-\newtheorem{lem}{Lemma}
-\newenvironment{lemma}
-{\colorlet{shadecolor}{orange!10} \begin{shaded}\begin{lem}}
-{\end{lem}\end{shaded}}
-%%%%%%%%%%%%% DEFINITION %%%%%%%%%%%%%%%
-\newtheorem{defi}{Definition}
-\newenvironment{definition}
-{\colorlet{shadecolor}{red!10} \begin{shaded}\begin{defi}}
-{\end{defi}\end{shaded}}
-%%%%%%%%%%%%%% COROLLARY %%%%%%%%%%%%%%%%%%
-\newtheorem{cor}{Corollary}
-\newenvironment{corollary}
-{ \colorlet{shadecolor}{yellow!10} \begin{shaded}\begin{cor}}
-		{\end{cor}\end{shaded}}
-%%%%%%%%%%%%% PROPOSITIONS %%%%%%%%%%%%%%%%%%%
-\newtheorem{prop}{Proposition}
-\newenvironment{proposition}
-{ \colorlet{shadecolor}{green!10} \begin{shaded}\begin{prop}}
-		{\end{prop}\end{shaded}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 

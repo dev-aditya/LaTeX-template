@@ -1,8 +1,7 @@
 % !TEX program = pdflatex
 \documentclass{tufte-handout}
 
-\title{\centering Course:  Course Name}%\thanks{Inspired by Edward~R. Tufte!}}
-
+\title{\centering Course:  Course Name}
 \author{I'm the author}
 
 
@@ -30,16 +29,12 @@
 \newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
 \newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\definecolor{g1}{HTML}{077358}
-\definecolor{g2}{HTML}{00b096}
-
-\usepackage{xcolor} % for colour
-
 % add numbers to chapters, sections, subsections
 \setcounter{secnumdepth}{2}
-
-% chapter format
+\usepackage{xcolor}
+\definecolor{g1}{HTML}{077358}
+\definecolor{g2}{HTML}{00b096}
+% chapter format  %(if you use tufte-book class)
 %\titleformat{\chapter}%
 %{\huge\rmfamily\itshape\color{red}}% format applied to label+text
 %{\llap{\colorbox{red}{\parbox{1.5cm}{\hfill\itshape\huge\color{white}\thechapter}}}}% label
@@ -74,9 +69,7 @@
 
 \begin{abstract}
 \noindent
-Inspired by Tufte-\LaTeX class.
-
-Underconstruction. 
+A simple notes template. Inspired by Tufte-\LaTeX class.
 \end{abstract}
 
 %\printclassoptions
@@ -84,11 +77,17 @@ Underconstruction.
 
 \section{Page Layout}\label{sec:page-layout}
 
-\subsection{Headings}\label{sec:headings}
+\lipsum[1][1-8]\footnote[1]{Footnotes will appear on the margins}
 
 \begin{definition}%%  [can be kept empty]
-	\lipsum[1][1-3] %% for dummy text
+	Here's is the beautiful Schr\"odinger equation
+	\[ i\hbar {\frac {\partial }{\partial t}}\Psi (x,t)=
+	\left[-{\frac {\hbar ^{2}}{2m}}{\frac {\partial ^{2}}{\partial x^{2}}}+V(x,t)\right]\Psi (x,t)\]
 \end{definition}
+
+\subsection{Headings}\label{sec:headings}
+
+
 \marginnote{\begin{proof}[Proof (Theorem 1.1)] 
 		
 		\lipsum[1][1-3]\end{proof}}
@@ -100,17 +99,26 @@ Underconstruction.
 	\lipsum[1][1-3] %% for dummy text
 	
 \end{lemma}
+\begin{proof}
+	\lipsum[1][1-5]
+\end{proof}
 
-\marginnote{\begin{proof}\lipsum[1][1-3]\end{proof}}
+%\marginnote{\begin{proof}\lipsum[1][1-3]\end{proof}}
 
 \begin{corollary}%%  [can be kept empty]
 	\lipsum[1][1-3] %% for dummy text
-	
 \end{corollary}
 
+\begin{proposition}
+	\lipsum[1][1-3] %% for dummy text
+\end{proposition}
 \begin{problem}
 	\lipsum[1][1-2]
 \end{problem}
+
+\begin{proof}
+	\lipsum*[1]
+\end{proof}
 
 
 \end{document}
