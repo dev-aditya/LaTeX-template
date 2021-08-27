@@ -3,7 +3,6 @@ message: "If you use this software, please cite it using these metadata."
 authors:
   - name: Aditya Dev
     country: IN
-
 title: "LaTeX Fancy Book"
 date-released: 2021-03-10
 license: MIT
