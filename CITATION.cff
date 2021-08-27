@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it using these metadata."
 authors:
-  - name: Aditya Dev
-    country: IN
+ - family-names: Dev
+   given-names: Aditya
 title: "LaTeX Fancy Book"
 date-released: 2021-03-10
 license: MIT
